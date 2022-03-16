@@ -3,6 +3,7 @@
 ToDo list:
 - [x] add initial model from Pytorch
 - [ ] train model on Colab or my machine
+- [ ] create proper validation
 - [ ] add mlflow
 - [ ] add tests for code
 - [ ] take a look on dvc
