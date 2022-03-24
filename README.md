@@ -13,7 +13,7 @@ ToDo list:
 - [ ] add tests for code
 - [ ] take a look on dvc
 - [ ] find a solution for demo in web browser
-- [ ] put model on a server with working api
+- [ ] put model on a server with working api (TFServing)
 - [ ] write web page for inference on user's images
 - [ ] optimize network
 - [ ] list other potential architectures 
