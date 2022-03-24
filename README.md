@@ -17,3 +17,5 @@ ToDo list:
 - [ ] write web page for inference on user's images
 - [ ] optimize network
 - [ ] list other potential architectures 
+
+[colab train notebook](https://colab.research.google.com/drive/1vkrpdBNqSEyHxmXjoIJXOsRYEKS9L_Ls?usp=sharing)
