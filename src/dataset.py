@@ -15,7 +15,7 @@ class FoodDataset(torch.utils.data.Dataset):
         self.trans = trans
 
         self.coco_ds = COCO(coco_ds_path)
-        self.img_ids = sorted(self.coco_ds.getImgIds())
+        self.img_ids = self.coco_ds.getImgIds()
 
     def __getitem__(self, idx: int) -> dict:
         """
@@ -49,11 +49,11 @@ class FoodDataset(torch.utils.data.Dataset):
             bboxes[i][3] += bboxes[i][1]
 
         boxes = torch.as_tensor(bboxes, dtype=torch.float32)
-        labels = torch.ones(len(anns_obj), dtype=torch.int64)
+        labels = torch.as_tensor([ann_obj["category_id"] for ann_obj in anns_obj])
         masks = torch.as_tensor(masks, dtype=torch.uint8)
         image_id = torch.tensor([idx])
         area = torch.as_tensor(areas)
-        iscrowd = torch.zeros(len(anns_obj), dtype=torch.int64)
+        iscrowd = torch.as_tensor([ann_obj["iscrowd"] for ann_obj in anns_obj])
 
         target = {}
         target["boxes"] = boxes
