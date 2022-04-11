@@ -42,18 +42,20 @@ class FoodDataset(torch.utils.data.Dataset):
         bboxes = np.array([ann["bbox"] for ann in anns_obj])
         masks = np.array([self.coco_ds.annToMask(ann) for ann in anns_obj])
         areas = np.array([ann["area"] for ann in anns_obj])
-
+        labels = np.array([ann_obj["category_id"] for ann_obj in anns_obj])
+        iscrowd = np.array([ann_obj["iscrowd"] for ann_obj in anns_obj])
+        
         num_bbs = len(bboxes)
         for i in range(num_bbs):
             bboxes[i][2] += bboxes[i][0]
             bboxes[i][3] += bboxes[i][1]
 
         boxes = torch.as_tensor(bboxes, dtype=torch.float32)
-        labels = torch.as_tensor([ann_obj["category_id"] for ann_obj in anns_obj])
+        labels = torch.as_tensor(labels, dtype=torch.int64)
         masks = torch.as_tensor(masks, dtype=torch.uint8)
         image_id = torch.tensor([idx])
         area = torch.as_tensor(areas)
-        iscrowd = torch.as_tensor([ann_obj["iscrowd"] for ann_obj in anns_obj])
+        iscrowd = torch.as_tensor(iscrowd, dtype=torch.int64)
 
         target = {}
         target["boxes"] = boxes
