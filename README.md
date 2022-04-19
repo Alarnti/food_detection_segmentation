@@ -1,5 +1,7 @@
 # Food detection with segmentation
 
+[Food competition](https://www.aicrowd.com/challenges/food-recognition-benchmark-2022)
+
 ToDo list:
 - [x] add initial model from Pytorch
 - [ ] train model on Colab or my machine
