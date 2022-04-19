@@ -11,7 +11,7 @@ ToDo list:
     - [ ] with augs
     - [ ] with different optimizers 
 - [x] create proper validation | created mAP from torchmetrics
-- [ ] add mlflow
+- [x] add mlflow -> using wandb
 - [ ] add tests for code
 - [ ] take a look on dvc
 - [ ] find a solution for demo in web browser
