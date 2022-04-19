@@ -18,7 +18,7 @@ def show_image_coco(
     coco_labels: COCO,
     with_mask: bool = True,
     with_bb: bool = False,
-) -> np.ndarray:
+) -> None:
     im_info = coco_labels.loadImgs(image_id)[0]
 
     if not with_mask:
