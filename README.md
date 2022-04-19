@@ -4,7 +4,7 @@ ToDo list:
 - [x] add initial model from Pytorch
 - [ ] train model on Colab or my machine
   - [ ] check quality for different settings
-    - [ ] raw (no warmup, augs, adam, backbone frozen)
+    - [x] raw (no warmup, augs, adam, backbone frozen)
     - [ ] with warmup
     - [ ] with augs
     - [ ] with different optimizers 
