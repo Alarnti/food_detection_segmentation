@@ -70,3 +70,16 @@ def show_mask_bb(torch_ds: torch.utils.data.Dataset, ind: int) -> None:
         im = draw_bb(im, bb_el)
 
     plt.imshow(im)
+
+
+def show_ind_img(ds: COCO, ind: int, ims_path: str) -> None:
+    img_ids = ds.getImgIds()
+
+    return show_image_coco(img_ids[ind], ims_path, ds, True, True)
+
+
+def show_random_img(ds: COCO, ims_path: str) -> None:
+    img_ids = ds.getImgIds()
+    rand_ind = np.random.randint(len(img_ids))
+
+    return show_image_coco(img_ids[rand_ind], ims_path, ds, True, True)
